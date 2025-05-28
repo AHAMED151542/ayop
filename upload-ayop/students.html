@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>بوابة الطلاب | مدرسة أيوب</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- تنسيقات مخصصة -->
+    <link rel="stylesheet" href="assets/css/style.css">
+ <style>
+        .dev-banner {
+            background: linear-gradient(90deg, #ff6b6b, #ff8e8e, #ff6b6b);
+            background-size: 200% auto;
+            animation: gradient 3s linear infinite;
+            border-bottom: 2px dashed white;
+            color: white;
+            font-weight: bold;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+        }
+        
+        @keyframes gradient {
+            0% { background-position: 0% center; }
+            100% { background-position: 200% center; }
+        }
+        
+        .banner-icon {
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+        
+        .close-btn {
+            text-shadow: none;
+            opacity: 0.8;
+            transition: all 0.3s;
+        }
+        
+        .close-btn:hover {
+            opacity: 1;
+            transform: rotate(90deg);
+        }
+                .hero-section {
+            font-family: 'Tajawal', sans-serif;
+            background: 
+                linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), /* طبقة تظليل */
+                url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') no-repeat center center;
+            background-size: cover;
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+        }
+        
+        @media (max-width: 768px) {
+            .hero-section {
+                min-height: 50vh;
+                background-position: 60% center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- شريط التنقل -->
+          <div class="dev-banner py-3">
+        <div class="container d-flex justify-content-between align-items-center">
+            <div>
+                <i class="fas fa-tools banner-icon me-2"></i>
+                <span>هذا الموقع تحت التطوير - الشكل الحالي غير الشكل النهائي : تصميم وتنفيذ : ليث نزار - Laith Nezar</span>
+            </div>
+            <button class="close-btn bg-transparent border-0 text-white fs-5">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    </div>
+<div class="position-fixed bottom-0 end-0 m-3 p-3 bg-danger text-white rounded shadow-lg" style="z-index: 1000; transform: rotate(-5deg);">
+  <i class="fas fa-hammer"></i> تحت التطوير
+</div>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <span class="fw-bold">مدرسة أيوب</span>
+                <small class="d-block">بوابة الطلاب</small>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                  <li class="nav-item">
+                        <a class="nav-link active" href="index.html">الرئيسية</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="students.html">الطلاب</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- المحتوى الرئيسي -->
+    <main class="py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="card shadow-sm">
+                        <div class="card-header bg-primary text-white">
+                            <h3 class="mb-0">البحث عن الموارد التعليمية</h3>
+                        </div>
+                        <div class="card-body">
+                            <form id="resourcesForm">
+                                <div class="row g-3">
+                                    <div class="col-md-4">
+                                        <label for="grade" class="form-label">الصف الدراسي</label>
+                                        <select class="form-select" id="grade" required>
+                                            <option value="" selected disabled>اختر الصف</option>
+                                            <option value="1">الصف العاشر</option>
+                                            <option value="21">الصف الحادي عشر أدبي</option>
+                                            <option value="22">الصف الحادي عشر علمي</option>
+                                            <option value="31">الصف الثاني عشر ادبي</option>
+                                            <option value="32">الصف الثاني عشر علمي</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="subject" class="form-label">المادة</label>
+                                        <select class="form-select" id="subject" required>
+                                            <option value="" selected disabled>اختر المادة</option>
+                                            <option value="math">الرياضيات</option>
+                                            <option value="science">العلوم</option>
+                                            <option value="arabic">اللغة العربية</option>
+                                            <option value="english">اللغة الأنلجيزية</option>
+                                            <option value="franch">اللغة الفرنسية</option>
+                                            <option value="physics">الفيزياء</option>
+                                            <option value="chemistry">الكيمياء</option>
+                                            <option value="islamc">أسلامية</option>
+                                            <option value="history">تاريخ</option>
+                             
+                                        </select>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="semester" class="form-label">الفصل الدراسي</label>
+                                        <select class="form-select" id="semester" required>
+                                            <option value="" selected disabled>اختر الفصل</option>
+                                            <option value="1">الفصل الأول</option>
+                                            <option value="2">الفصل الثاني</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="d-grid mt-4">
+                                    <button type="submit" class="btn btn-primary">بحث</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- نتائج البحث -->
+                    <div class="card mt-4 shadow-sm d-none" id="resultsCard">
+                        <div class="card-header bg-success text-white">
+                            <h4 class="mb-0">الموارد المتاحة</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>نوع الملف</th>
+                                            <th>الاسم</th>
+                                            <th>التاريخ</th>
+                                            <th>تحميل</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="resourcesTable">
+                                        <!-- سيتم ملؤها بالجافاسكريبت -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- تذييل الصفحة -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container text-center">
+           <p class="text-center mb-0">&copy; جميع الحقوق محفوظة لمدرسة : ايوب حسين الايوب</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS + Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- ملف الجافاسكريبت المخصص -->
+    <script src="assets/js/script.js"></script>
+       <script src="assets/js/students-enhanced.js"></script>
+</body>
+</html>

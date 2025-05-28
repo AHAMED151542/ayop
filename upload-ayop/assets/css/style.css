@@ -1,0 +1,67 @@
+/* تنسيقات عامة */
+body {
+    font-family: 'Tajawal', sans-serif;
+    background-color: #f8f9fa;
+    padding-top: 56px; /* لمنع تداخل المحتوى مع شريط التنقل */
+}
+
+/* شريط التنقل */
+.navbar-brand small {
+    font-size: 0.7rem;
+    opacity: 0.8;
+}
+
+/* أقسام الصفحة */
+section {
+    padding: 3rem 0;
+}
+
+/* البطاقات */
+.card {
+    transition: all 0.3s ease;
+    border: none;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* الأزرار */
+.btn {
+    padding: 0.5rem 1.5rem;
+    font-weight: 600;
+}
+
+/* صفحة عن المدرسة */
+.achievements {
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+}
+
+/* صفحة المكتبة */
+.list-group-item {
+    border-left: none;
+    border-right: none;
+}
+
+/* صفحة الاتصال */
+.social-icons a {
+    transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+    opacity: 0.8;
+    transform: scale(1.1);
+}
+
+/* تصميم متجاوب */
+@media (max-width: 768px) {
+    .navbar-brand {
+        font-size: 1rem;
+    }
+    
+    section {
+        padding: 2rem 0;
+    }
+}

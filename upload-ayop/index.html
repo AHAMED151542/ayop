@@ -1,0 +1,346 @@
+
+
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مدرسة أيوب - الرئيسية</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- خطوط Google -->
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+    <!-- تنسيقات مخصصة -->
+    <link rel="stylesheet" href="assets/css/style.css">
+        <style>
+        .dev-banner {
+            background: linear-gradient(90deg, #ff6b6b, #ff8e8e, #ff6b6b);
+            background-size: 200% auto;
+            animation: gradient 3s linear infinite;
+            border-bottom: 2px dashed white;
+            color: white;
+            font-weight: bold;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+        }
+        
+        @keyframes gradient {
+            0% { background-position: 0% center; }
+            100% { background-position: 200% center; }
+        }
+        
+        .banner-icon {
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+        
+        .close-btn {
+            text-shadow: none;
+            opacity: 0.8;
+            transition: all 0.3s;
+        }
+        
+        .close-btn:hover {
+            opacity: 1;
+            transform: rotate(90deg);
+        }
+                .hero-section {
+            font-family: 'Tajawal', sans-serif;
+            background: 
+                linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), /* طبقة تظليل */
+                url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') no-repeat center center;
+            background-size: cover;
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+        }
+        
+        @media (max-width: 768px) {
+            .hero-section {
+                min-height: 50vh;
+                background-position: 60% center;
+            }
+        }
+    </style>
+</head>
+<body>
+     <div class="dev-banner py-3">
+        <div class="container d-flex justify-content-between align-items-center">
+            <div>
+                <i class="fas fa-tools banner-icon me-2"></i>
+                <span>هذا الموقع تحت التطوير - الشكل الحالي غير الشكل النهائي : تصميم وتنفيذ : ليث نزار - Laith Nezar</span>
+            </div>
+            <button class="close-btn bg-transparent border-0 text-white fs-5">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    </div>
+<div class="position-fixed bottom-0 end-0 m-3 p-3 bg-danger text-white rounded shadow-lg" style="z-index: 1000; transform: rotate(-5deg);">
+  <i class="fas fa-hammer"></i> تحت التطوير
+</div>
+    <!-- شريط التنقل -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <span class="fw-bold">مدرسة ايوب حسين الأيوب</span>
+                <small class="d-block">نور العلم مستقبل الأجيال</small>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">الرئيسية</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">عن المدرسة</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="library.html">المكتبة</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="students.html">الطلاب</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">اتصل بنا</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- قسم البطل -->
+     <div class="hero-section text-center text-white">
+        <div class="container">
+            <h1 class="display-3 fw-bold mb-4 animate__animated animate__fadeInDown">مرحبًا بكم في مدرستنا</h1>
+            <p class="fs-4 d-none d-md-block">نُعلِّم لنُلهِم ونبني المستقبل</p>
+            <a href="about.html" class="btn btn-primary btn-lg mt-3 animate__animated animate__fadeInUp ">تعرف علينا</a>
+            
+        </div>
+    </div>
+
+    <!-- المميزات -->
+    <section class="features py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body text-center">
+                            <i class="fas fa-book-open fa-3x text-primary mb-3"></i>
+                            <h3>المكتبة الرقمية</h3>
+                            <p>آلاف المصادر التعليمية بين يديك</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body text-center">
+                            <i class="fas fa-users fa-3x text-primary mb-3"></i>
+                            <h3>بوابة الطلاب</h3>
+                            <p>الوصول إلى المذكرات والاختبارات</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body text-center">
+                            <i class="fas fa-book fa-3x text-primary mb-3"></i>
+                            <h3>أحدث الإصدارات</h3>
+                            <p>كتب ومناهج وزارة التربية</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- الفريق -->
+    <section class="team py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">أدارة المدرسة</h2>
+            <div class="row g-4">
+                <div class="col-md-3">
+                    <div class="card text-center shadow-sm">
+                        <img src="assets/images/1.jpg" class="card-img-top" alt="المعلم">
+                        <div class="card-body">
+                            <h5 class="card-title">أ.عذبي الفايز</h5>
+                            <p class="text-muted">مدير المدرسة</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card text-center shadow-sm">
+                              <img src="assets/images/1.jpg" class="card-img-top" alt="المعلم">
+                        <div class="card-body">
+                            <h5 class="card-title">أ.خالد العجمي</h5>
+                            <p class="text-muted">المدير المساعد</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card text-center shadow-sm">
+                              <img src="assets/images/1.jpg" class="card-img-top" alt="المعلم">
+                        <div class="card-body">
+                            <h5 class="card-title">أ.سالم العتيبي</h5>
+                            <p class="text-muted">المدير المساعد</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card text-center shadow-sm">
+                         <img src="assets/images/1.jpg" class="card-img-top" alt="المعلم">
+                        <div class="card-body">
+                            <h5 class="card-title">أ.فالح العجمي</h5>
+                            <p class="text-muted">المدير المساعد</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- يمكن إضافة المزيد من أعضاء الفريق -->
+            </div>
+        </div>
+        
+    </section>
+    <section class="team py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">رؤساء الأقسام</h2>
+            <div class="row g-4">
+                <div class="col-md-3">
+                    <div class="card text-center shadow-sm">
+                        <img src="assets/images/1.jpg" class="card-img-top" alt="المعلم">
+                        <div class="card-body">
+                            <h5 class="card-title">أ.الأسم</h5>
+                            <p class="text-muted">رئيس قسم : الرياضيات</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card text-center shadow-sm">
+                        <img src="assets/images/1.jpg" class="card-img-top" alt="المعلم">
+                        <div class="card-body">
+                            <h5 class="card-title">أ.الأسم</h5>
+                            <p class="text-muted">رئيس قسم : العربي</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card text-center shadow-sm">
+                        <img src="assets/images/1.jpg" class="card-img-top" alt="المعلم">
+                        <div class="card-body">
+                            <h5 class="card-title">أ.الأسم</h5>
+                            <p class="text-muted">رئيس قسم : الفيزياء</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card text-center shadow-sm">
+                        <img src="assets/images/1.jpg" class="card-img-top" alt="المعلم">
+                        <div class="card-body">
+                            <h5 class="card-title">أ.الأسم</h5>
+                            <p class="text-muted">رئيس قسم : الكيمياء</p>
+                        </div>
+                    </div>
+                </div>
+                      <div class="col-md-3">
+                    <div class="card text-center shadow-sm">
+                        <img src="assets/images/1.jpg" class="card-img-top" alt="المعلم">
+                        <div class="card-body">
+                            <h5 class="card-title">أ.الأسم</h5>
+                            <p class="text-muted">رئيس قسم : الأحياء</p>
+                        </div>
+                    </div>
+                </div>
+                      <div class="col-md-3">
+                    <div class="card text-center shadow-sm">
+                        <img src="assets/images/1.jpg" class="card-img-top" alt="المعلم">
+                        <div class="card-body">
+                            <h5 class="card-title">أ.الأسم</h5>
+                            <p class="text-muted">رئيس قسم : اللغة الأنجليزية</p>
+                        </div>
+                    </div>
+                </div>
+                      <div class="col-md-3">
+                    <div class="card text-center shadow-sm">
+                        <img src="assets/images/1.jpg" class="card-img-top" alt="المعلم">
+                        <div class="card-body">
+                            <h5 class="card-title">أ.الأسم</h5>
+                            <p class="text-muted">رئيس قسم : اللغة العربية</p>
+                        </div>
+                    </div>
+                </div>
+                      <div class="col-md-3">
+                    <div class="card text-center shadow-sm">
+                        <img src="assets/images/1.jpg" class="card-img-top" alt="المعلم">
+                        <div class="card-body">
+                            <h5 class="card-title">أ.الأسم</h5>
+                            <p class="text-muted">رئيس قسم : اللغة الفرنسية</p>
+                        </div>
+                    </div>
+                </div>
+                      <div class="col-md-3">
+                    <div class="card text-center shadow-sm">
+                        <img src="assets/images/1.jpg" class="card-img-top" alt="المعلم">
+                        <div class="card-body">
+                            <h5 class="card-title">أ.الأسم</h5>
+                            <p class="text-muted">رئيس قسم : اللغة البدنية</p>
+                        </div>
+                    </div>
+                </div>
+                      <div class="col-md-3">
+                    <div class="card text-center shadow-sm">
+                        <img src="assets/images/1.jpg" class="card-img-top" alt="المعلم">
+                        <div class="card-body">
+                            <h5 class="card-title">أ.الأسم</h5>
+                            <p class="text-muted">رئيس قسم : التاريخ</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- يمكن إضافة المزيد من أعضاء الفريق -->
+            </div>
+        </div>
+        
+    </section>
+
+    <!-- تذييل الصفحة -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>عن المدرسة</h5>
+                    <p>مؤسسة تعليمية رائدة تهدف إلى تقديم تعليم متميز.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>روابط سريعة</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-white">الرئيسية</a></li>
+                        <li><a href="students.html" class="text-white">بوابة الطلاب</a></li>
+                        <li><a href="contact.html" class="text-white">اتصل بنا</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>تواصل معنا</h5>
+                    <p>البريد: ayop@school<br>الهاتف: 123456789</p>
+                </div>
+            </div>
+            <hr>
+      <footer class="bg-dark text-white text-center py-3 ">
+  <div class="container">
+     جميع الحقوق محفوظة لمدرسة : ايوب حسين الأيوب&copy; 2025 | تصميم وتنفيذ : <strong>Laith Nezar</strong>
+  </div>
+</footer>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS + Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</body>
+</html>
