@@ -7,7 +7,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>مدرسة أيوب - الرئيسية</title>
-      <meta name="google-site-verification" content="5wLX2QyJvWt-B71-UfD-iBJLDnz11URkWOx308Sj67Y" />
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- خطوط Google -->
@@ -15,62 +14,15 @@
     <!-- تنسيقات مخصصة -->
     <link rel="stylesheet" href="assets/css/style.css">
         <style>
-        .dev-banner {
-            background: linear-gradient(90deg, #ff6b6b, #ff8e8e, #ff6b6b);
-            background-size: 200% auto;
-            animation: gradient 3s linear infinite;
-            border-bottom: 2px dashed white;
-            color: white;
-            font-weight: bold;
-            text-shadow: 0 1px 2px rgba(0,0,0,0.3);
-        }
-        
-        @keyframes gradient {
-            0% { background-position: 0% center; }
-            100% { background-position: 200% center; }
-        }
-        
-        .banner-icon {
-            animation: bounce 2s infinite;
-        }
-        
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-5px); }
-        }
-        
-        .close-btn {
-            text-shadow: none;
-            opacity: 0.8;
-            transition: all 0.3s;
-        }
-        
-        .close-btn:hover {
-            opacity: 1;
-            transform: rotate(90deg);
-        }
-                .hero-section {
-            font-family: 'Tajawal', sans-serif;
-            background: 
-                linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), /* طبقة تظليل */
-                url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') no-repeat center center;
-            background-size: cover;
-            min-height: 70vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
-        }
-        
-        @media (max-width: 768px) {
-            .hero-section {
-                min-height: 50vh;
-                background-position: 60% center;
-            }
-        }
+   
+
+
+
+
     </style>
 </head>
 <body>
+    
      <div class="dev-banner py-3">
         <div class="container d-flex justify-content-between align-items-center">
             <div>
@@ -112,6 +64,28 @@
                     <li class="nav-item">
                         <a class="nav-link" href="contact.html">اتصل بنا</a>
                     </li>
+                   
+                    <li>
+                    <label class="switch">
+  <input id="checkbox" type="checkbox" />
+  <span class="slider">
+    <div class="star star_1"></div>
+    <div class="star star_2"></div>
+    <div class="star star_3"></div>
+    <svg viewBox="0 0 16 16" class="cloud_1 cloud">
+      <path
+        transform="matrix(.77976 0 0 .78395-299.99-418.63)"
+        fill="#fff"
+        d="m391.84 540.91c-.421-.329-.949-.524-1.523-.524-1.351 0-2.451 1.084-2.485 2.435-1.395.526-2.388 1.88-2.388 3.466 0 1.874 1.385 3.423 3.182 3.667v.034h12.73v-.006c1.775-.104 3.182-1.584 3.182-3.395 0-1.747-1.309-3.186-2.994-3.379.007-.106.011-.214.011-.322 0-2.707-2.271-4.901-5.072-4.901-2.073 0-3.856 1.202-4.643 2.925"
+      ></path>
+    </svg>
+  </span>
+</label>
+</li>
+                    <li class="nav-item">
+
+
+                    </li>
                 </ul>
             </div>
         </div>
@@ -120,7 +94,7 @@
     <!-- قسم البطل -->
      <div class="hero-section text-center text-white">
         <div class="container">
-            <h1 class="display-3 fw-bold mb-4 animate__animated animate__fadeInDown">مرحبًا بكم في ثانوية ايوب</h1>
+            <h1 class="display-3 fw-bold mb-4 animate__animated animate__fadeInDown">مرحبًا بكم في مدرستنا</h1>
             <p class="fs-4 d-none d-md-block">نُعلِّم لنُلهِم ونبني المستقبل</p>
             <a href="about.html" class="btn btn-primary btn-lg mt-3 animate__animated animate__fadeInUp ">تعرف علينا</a>
             
@@ -163,8 +137,8 @@
     </section>
 
     <!-- الفريق -->
-    <section class="team py-5 bg-light">
-        <div class="container">
+    <section class="namesec" id="namesec">
+        <div class="container" id="mangcontainer" >
             <h2 class="text-center mb-5">أدارة المدرسة</h2>
             <div class="row g-4">
                 <div class="col-md-3">
@@ -172,7 +146,7 @@
                         <img src="assets/images/1.jpg" class="card-img-top" alt="المعلم">
                         <div class="card-body">
                             <h5 class="card-title">أ.عذبي الفايز</h5>
-                            <p class="text-muted">مدير المدرسة</p>
+                            <p id="Teachname">مدير المدرسة</p>
                         </div>
                     </div>
                 </div>
@@ -181,7 +155,7 @@
                               <img src="assets/images/1.jpg" class="card-img-top" alt="المعلم">
                         <div class="card-body">
                             <h5 class="card-title">أ.خالد العجمي</h5>
-                            <p class="text-muted">المدير المساعد</p>
+                            <p id="Teachname">المدير المساعد</p>
                         </div>
                     </div>
                 </div>
@@ -190,7 +164,7 @@
                               <img src="assets/images/1.jpg" class="card-img-top" alt="المعلم">
                         <div class="card-body">
                             <h5 class="card-title">أ.سالم العتيبي</h5>
-                            <p class="text-muted">المدير المساعد</p>
+                            <p id="Teachname">المدير المساعد</p>
                         </div>
                     </div>
                 </div>
@@ -199,7 +173,7 @@
                          <img src="assets/images/1.jpg" class="card-img-top" alt="المعلم">
                         <div class="card-body">
                             <h5 class="card-title">أ.فالح العجمي</h5>
-                            <p class="text-muted">المدير المساعد</p>
+                            <p id="Teachname">المدير المساعد</p>
                         </div>
                     </div>
                 </div>
@@ -208,7 +182,7 @@
         </div>
         
     </section>
-    <section class="team py-5 bg-light">
+    <section class="namesec" id="namesec">
         <div class="container">
             <h2 class="text-center mb-5">رؤساء الأقسام</h2>
             <div class="row g-4">
@@ -217,7 +191,7 @@
                         <img src="assets/images/1.jpg" class="card-img-top" alt="المعلم">
                         <div class="card-body">
                             <h5 class="card-title">أ.الأسم</h5>
-                            <p class="text-muted">رئيس قسم : الرياضيات</p>
+                            <p id="Teachname" >رئيس قسم : الرياضيات</p>
                         </div>
                     </div>
                 </div>
@@ -226,7 +200,7 @@
                         <img src="assets/images/1.jpg" class="card-img-top" alt="المعلم">
                         <div class="card-body">
                             <h5 class="card-title">أ.الأسم</h5>
-                            <p class="text-muted">رئيس قسم : العربي</p>
+                            <p id="Teachname" >رئيس قسم : العربي</p>
                         </div>
                     </div>
                 </div>
@@ -235,7 +209,7 @@
                         <img src="assets/images/1.jpg" class="card-img-top" alt="المعلم">
                         <div class="card-body">
                             <h5 class="card-title">أ.الأسم</h5>
-                            <p class="text-muted">رئيس قسم : الفيزياء</p>
+                            <p id="Teachname" >رئيس قسم : الفيزياء</p>
                         </div>
                     </div>
                 </div>
@@ -244,7 +218,7 @@
                         <img src="assets/images/1.jpg" class="card-img-top" alt="المعلم">
                         <div class="card-body">
                             <h5 class="card-title">أ.الأسم</h5>
-                            <p class="text-muted">رئيس قسم : الكيمياء</p>
+                            <p id="Teachname" >رئيس قسم : الكيمياء</p>
                         </div>
                     </div>
                 </div>
@@ -253,7 +227,7 @@
                         <img src="assets/images/1.jpg" class="card-img-top" alt="المعلم">
                         <div class="card-body">
                             <h5 class="card-title">أ.الأسم</h5>
-                            <p class="text-muted">رئيس قسم : الأحياء</p>
+                            <p id="Teachname" >رئيس قسم : الأحياء</p>
                         </div>
                     </div>
                 </div>
@@ -262,7 +236,7 @@
                         <img src="assets/images/1.jpg" class="card-img-top" alt="المعلم">
                         <div class="card-body">
                             <h5 class="card-title">أ.الأسم</h5>
-                            <p class="text-muted">رئيس قسم : اللغة الأنجليزية</p>
+                            <p id="Teachname" >رئيس قسم : اللغة الأنجليزية</p>
                         </div>
                     </div>
                 </div>
@@ -271,7 +245,7 @@
                         <img src="assets/images/1.jpg" class="card-img-top" alt="المعلم">
                         <div class="card-body">
                             <h5 class="card-title">أ.الأسم</h5>
-                            <p class="text-muted">رئيس قسم : اللغة العربية</p>
+                            <p id="Teachname" >رئيس قسم : اللغة العربية</p>
                         </div>
                     </div>
                 </div>
@@ -280,7 +254,7 @@
                         <img src="assets/images/1.jpg" class="card-img-top" alt="المعلم">
                         <div class="card-body">
                             <h5 class="card-title">أ.الأسم</h5>
-                            <p class="text-muted">رئيس قسم : اللغة الفرنسية</p>
+                            <p id="Teachname" >رئيس قسم : اللغة الفرنسية</p>
                         </div>
                     </div>
                 </div>
@@ -289,7 +263,7 @@
                         <img src="assets/images/1.jpg" class="card-img-top" alt="المعلم">
                         <div class="card-body">
                             <h5 class="card-title">أ.الأسم</h5>
-                            <p class="text-muted">رئيس قسم : اللغة البدنية</p>
+                            <p id="Teachname" >رئيس قسم : اللغة البدنية</p>
                         </div>
                     </div>
                 </div>
@@ -298,7 +272,7 @@
                         <img src="assets/images/1.jpg" class="card-img-top" alt="المعلم">
                         <div class="card-body">
                             <h5 class="card-title">أ.الأسم</h5>
-                            <p class="text-muted">رئيس قسم : التاريخ</p>
+                            <p id="Teachname">رئيس قسم : التاريخ</p>
                         </div>
                     </div>
                 </div>
@@ -338,10 +312,14 @@
         </div>
     </footer>
 
-    <!-- Bootstrap JS + Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    
-    <!-- Font Awesome -->
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+<script src="assets/js/script.js"></script>
+<script src="darkmode.js"></script>
+<script>
+  fetch('darkmood.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('header-placeholder').innerHTML = data;
+    });
+</script>
 </body>
 </html>
