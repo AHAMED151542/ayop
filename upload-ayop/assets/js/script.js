@@ -2,35 +2,6 @@
 
 
 
-const checkbox = document.getElementById('checkbox');
-
-window.addEventListener('DOMContentLoaded', () => {
-  const darkMode = localStorage.getItem('darkMode') === 'true';
-  checkbox.checked = !darkMode;
-  if (darkMode) {
-    document.body.classList.add('dark-mode');
-  }
-});
-
-
-checkbox.addEventListener('change', () => {
-  if (!checkbox.checked) {  
-    document.body.classList.add('dark-mode');
-    localStorage.setItem('darkMode', 'true');
-  } else {
-    document.body.classList.remove('dark-mode');
-    localStorage.setItem('darkMode', 'false');
-  }
-});
-function updateUI(isDark) {
-  if (isDark) {
-    document.body.classList.add('dark-mode');
-
-  } else {
-    document.body.classList.remove('dark-mode');
-
-  }
-}
 
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -93,3 +64,33 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+
+const checkbox = document.getElementById('checkbox');
+
+window.addEventListener('DOMContentLoaded', () => {
+  const darkMode = localStorage.getItem('darkMode') === 'true';
+  checkbox.checked = !darkMode;
+  if (darkMode) {
+    document.body.classList.add('dark-mode');
+  }
+});
+
+
+checkbox.addEventListener('change', () => {
+  if (!checkbox.checked) {  
+    document.body.classList.add('dark-mode');
+    localStorage.setItem('darkMode', 'true');
+  } else {
+    document.body.classList.remove('dark-mode');
+    localStorage.setItem('darkMode', 'false');
+  }
+});
+function updateUI(isDark) {
+  if (isDark) {
+    document.body.classList.add('dark-mode');
+
+  } else {
+    document.body.classList.remove('dark-mode');
+
+  }
+}
