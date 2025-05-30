@@ -173,8 +173,23 @@ button {
 }
 
 
+.image-slider img {
+  width: 100%;
+  height: auto;
+  transition: opacity 1s ease-in-out;
+  opacity: 1;
+}
 
 
+#studentbuttoninindex{
+  cursor: pointer;
+}
+#contactwithusonindex{
+  cursor: pointer;
+}
+#aboutbuttoninindex{
+  cursor: pointer;
+}
 
 
 .switch {
