@@ -100,7 +100,7 @@
                         <a class="nav-link active" href="about.html">عن المدرسة</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="library.html">المكتبة</a>
+                        <a class="nav-link" href="library.html">مكتبة المدرسة</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="students.html">الطلاب</a>
@@ -108,6 +108,24 @@
                     <li class="nav-item">
                         <a class="nav-link" href="contact.html">اتصل بنا</a>
                     </li>
+                                 <li>
+                    <label class="switch">
+  <input id="checkbox" type="checkbox" />
+  <span class="slider">
+    <div class="star star_1"></div>
+    <div class="star star_2"></div>
+    <div class="star star_3"></div>
+    <svg viewBox="0 0 16 16" class="cloud_1 cloud">
+      <path
+        transform="matrix(.77976 0 0 .78395-299.99-418.63)"
+        fill="#fff"
+        d="m391.84 540.91c-.421-.329-.949-.524-1.523-.524-1.351 0-2.451 1.084-2.485 2.435-1.395.526-2.388 1.88-2.388 3.466 0 1.874 1.385 3.423 3.182 3.667v.034h12.73v-.006c1.775-.104 3.182-1.584 3.182-3.395 0-1.747-1.309-3.186-2.994-3.379.007-.106.011-.214.011-.322 0-2.707-2.271-4.901-5.072-4.901-2.073 0-3.856 1.202-4.643 2.925"
+      ></path>
+    </svg>
+  </span>
+</label>
+</li>
+                    
                 </ul>
             </div>
         </div>
@@ -117,8 +135,8 @@
     <main class="py-5">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-lg-6 mb-4">
-                    <img src="assets/images/pic1.jpg" alt="مبنى المدرسة" class="img-fluid rounded shadow">
+                <div class="col-lg-6 mb-4" id="image-slider" >
+                    <img id="mypic1" src="assets/images/pic1.jpg" alt="مبنى المدرسة" class="img-fluid rounded shadow">
                 </div>
                 <div class="col-lg-6">
                     <h2 class="fw-bold mb-4">عن مدرسة أيوب</h2>
@@ -139,7 +157,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="card h-100 border-0 shadow-sm">
-                        <div class="card-body text-center">
+                        <div class="card-body text-center" id="ourmsg">
                             <i class="fas fa-hand-holding-heart fa-3x text-primary mb-3"></i>
                             <h4>رسالتنا</h4>
                             <p>تنشئة جيل مبدع متعلم قادر على مواجهة تحديات المستقبل.</p>
@@ -162,9 +180,10 @@
             </div>
 
             <!-- الإنجازات -->
-            <section class="achievements mt-5 py-4 bg-light rounded">
+             <div id="aboutussection">
+            <section class="achievements mt-5 py-4 bg-light">
                 <h3 class="text-center mb-4">إنجازاتنا</h3>
-                <div class="row g-4">
+                <div class="row g-4"  id="aboutussection">
                     <div class="col-md-3 text-center">
                         <div class="display-4 text-primary fw-bold">+500</div>
                         <p>طالب</p>
@@ -177,15 +196,27 @@
                         <div class="display-4 text-primary fw-bold">90%</div>
                         <p>نسبة النجاح</p>
                     </div>
-                    <div class="col-md-3 text-center">
+                    <disv class="col-md-3 text-center">
                         <div class="display-4 text-primary fw-bold">15</div>
                         <p>جائزة تعليمية</p>
-                    </div>
+                    </disv>
                 </div>
             </section>
+            </div>
         </div>
     </main>
 
+
+
+
+
+
+
+
+
+
+
+    
     <!-- تذييل الصفحة -->
     <footer class="bg-dark text-white py-4">
         <div class="container">
@@ -215,5 +246,31 @@
 
     <!-- Bootstrap JS + Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="darkmode.js"></script>
+ <script>
+  const images = [
+    "assets/images/pic1.jpg",
+        "assets/images/pic3.png",
+            "assets/images/pic4.png",
+                "assets/images/pic5.png",
+                    "assets/images/pic6.png",
+                        "assets/images/pic7.png",
+                        "assets/images/pic8.png",
+  ];
+
+  let current = 0;
+  const imgElement = document.getElementById("mypic1");
+
+  setInterval(() => {
+    imgElement.style.opacity = 0;
+
+    setTimeout(() => {
+      current = (current + 1) % images.length;
+      imgElement.src = images[current];
+      imgElement.style.opacity = 1;
+    }, 500); // نصف الثانية لإخفاء الصورة قبل تغييرها
+  }, 3000); // كل 3 ثواني تتغير الصورة
+</script>
+    <script src="assets/js/script.js"></script>
 </body>
 </html>
