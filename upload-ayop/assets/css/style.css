@@ -145,9 +145,7 @@ body.dark-mode .card {
   background-color: #2c2c2c;
   color: #fff;
 }
-.card-body {
-  background-color: red;
-}
+
 
 body.dark-mode .btn {
   border-color: #ccc;
