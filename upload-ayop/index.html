@@ -146,7 +146,7 @@
 <body>
 <canvas id="canvas"></canvas>
 <!-- الفيديو الأول -->
-<video class="background-video" autoplay muted>
+<video class="background-video" autoplay >
     <source src="https://cdn.discordapp.com/attachments/1393000263610007792/1393002817878229112/Untitled_video_-_Made_with_Clipchamp_14.mp4?ex=68719678&is=687044f8&hm=e9529f95345942823277234c416ec71adc1a292db9ba720e890d7a3a3996f508&" type="video/mp4">
     Your browser does not support the video tag.
 </video>
@@ -156,7 +156,7 @@
 
 <!-- محتوى الصفحة الثانية -->
 <div class="content">
-    <video class="background-video-second" autoplay loop muted>
+    <video class="background-video-second" autoplay loop >
         <source src="https://cdn.discordapp.com/attachments/1393000263610007792c1a292db9ba720e890d7a3a3996f508&" type="video/mp4">
         Your browser does not support the video tag.
     </video>
@@ -187,11 +187,11 @@
 
 <script>
 document.addEventListener('click', () => {
-  document.querySelectorAll('video').forEach(v => {
+  document.querySelectorAll('background-video').forEach(v => {
     v.muted = false;
     v.play();
   });
-  document.getElementById('background-audio')?.play();
+  document.getElementById('background-video')?.play();
 });
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -200,7 +200,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   
 
-        const audio = document.getElementById('background-audio');
+        const audio = document.getElementById('background-video');
         
         audio.play().catch(e => console.log("لا يمكن تشغيل الصوت:", e));
  
